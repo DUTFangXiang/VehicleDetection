@@ -1,0 +1,603 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\VehicleFlowCounter.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\VehicleFlowCounter.ico"
+IDR_VEHICLTYPE          ICON                    "res\\VehicleFlowCounterDoc.ico"
+IDI_COPYRIGHT           ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_DISPLAY
+    BUTTON      ID_PAUSE
+    BUTTON      ID_NEXTFRAME
+    BUTTON      ID_NEXTTENFRAME
+    BUTTON      ID_PREVIOUSFRAMETEN
+    BUTTON      ID_PREVIOUSFRAME
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_BUTTON32791
+    BUTTON      ID_BUTTON32785
+    BUTTON      ID_BUTTON32787
+    BUTTON      ID_BUTTON32786
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "路口视频控制"
+    BEGIN
+        MENUITEM "打开视频",                        ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "播放视频",                        ID_DISPLAY
+        MENUITEM "暂停视频",                        ID_PAUSE
+        MENUITEM SEPARATOR
+        MENUITEM "下一帧",                         ID_NEXTFRAME
+        MENUITEM "上一帧",                         ID_PREVIOUSFRAME
+        MENUITEM "快进(10帧)",                     ID_NEXTTENFRAME
+        MENUITEM "快退(10帧)",                     ID_PREVIOUSFRAMETEN
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "初始化参数"
+    BEGIN
+        MENUITEM "设置车道参数",                      ID_SETROADWAYPARAMETER
+        MENUITEM "设置检测线",                       ID_SETLINE
+        MENUITEM "设置视频帧率",                      ID_SETFRAMERATE
+    END
+    POPUP "显示处理结果"
+    BEGIN
+        MENUITEM "显   示",                       ID_SHOWLINESIGNAL
+        MENUITEM "隐   藏",                       ID_HIDELINESIGNAL
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 VehicleFlowCounter(&A)...", ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 192, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于视频车辆检测系统"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    ICON            IDI_COPYRIGHT,IDC_STATIC,155,5,21,21,SS_SUNKEN | WS_BORDER
+    LTEXT           "视频车辆检测系统1.0 版",IDC_STATIC,4,7,119,8,SS_NOPREFIX
+    LTEXT           "版权所有：\n\n大连理工大学IIAU (C) 2016",IDC_STATIC,15,21,116,26
+    DEFPUSHBUTTON   "确定",IDOK,134,41,50,14,WS_GROUP
+END
+
+IDD_VIEW_TOTALPARA DIALOGEX 0, 0, 106, 320
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "System", 0, 0, 0x1
+BEGIN
+    CTEXT           "交　通　参　数",IDC_STATIC,0,0,106,13,SS_SUNKEN | WS_BORDER,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    GROUPBOX        "1车道",IDC_STATIC,2,16,104,55
+    GROUPBOX        "3车道",IDC_STATIC,2,138,104,55
+    GROUPBOX        "2车道",IDC_STATIC,1,77,104,55
+    GROUPBOX        "4车道",IDC_STATIC,2,199,104,55
+    GROUPBOX        "车道总和",IDC_STATIC,2,260,104,55
+    CTEXT           "车    辆    数：",IDC_STATIC,6,26,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "分钟交通量：",IDC_STATIC,6,37,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车            速：",IDC_STATIC,6,48,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "时间占有率：",IDC_STATIC,6,59,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车    辆    数：",IDC_STATIC,6,87,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "分钟交通量：",IDC_STATIC,6,98,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车            速：",IDC_STATIC,6,109,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "时间占有率：",IDC_STATIC,6,120,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车    辆    数：",IDC_STATIC,6,148,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "分钟交通量：",IDC_STATIC,6,159,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车            速：",IDC_STATIC,6,170,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "时间占有率：",IDC_STATIC,6,181,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车    辆    数：",IDC_STATIC,6,208,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "分钟交通量：",IDC_STATIC,6,219,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车            速：",IDC_STATIC,6,230,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "时间占有率：",IDC_STATIC,6,241,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车    辆    数：",IDC_STATIC,6,269,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "分钟交通量：",IDC_STATIC,6,280,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "车            速：",IDC_STATIC,6,291,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "时间占有率：",IDC_STATIC,6,302,49,10,SS_CENTERIMAGE | SS_SUNKEN
+    EDITTEXT        IDC_VEHICLENUM1,61,26,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINUTEVEHICLENUM1,61,37,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED1,61,48,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEDENSITY1,61,59,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VEHICLENUM2,61,87,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINUTEVEHICLENUM2,61,98,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED2,61,109,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEDENSITY2,61,120,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VEHICLENUM3,61,148,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINUTEVEHICLENUM3,61,159,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED3,61,170,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEDENSITY3,61,181,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VEHICELNUM4,61,208,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINUTEVEHICLENUM4,61,219,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED4,61,230,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEDENSITY4,61,241,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VEHECLENUMSUM,61,270,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINUTEVEHICLENUMSUM,61,281,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEEDSUM,61,292,38,10,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEDENSITYSUM,61,303,38,10,ES_AUTOHSCROLL
+END
+
+IDD_CHECKLINE_DIALOG DIALOG 0, 0, 214, 129
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置检测线位置"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_LINENUM,146,21,61,79,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider3",IDC_SLIDER_HEIGHT,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,31,95,11
+    CONTROL         "Slider1",IDC_SLIDER_LEFT,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,55,95,11
+    CONTROL         "Slider2",IDC_SLIDER_RIGHT,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,80,95,11
+    DEFPUSHBUTTON   "确      定",IDOK,154,87,46,14
+    PUSHBUTTON      "取      消",IDCANCEL,154,107,46,14
+    GROUPBOX        "检测线",IDC_STATIC,6,9,135,112
+    LTEXT           "左端位置：",IDC_STATIC,14,46,45,9
+    LTEXT           "右端位置：",IDC_STATIC,14,70,45,9
+    LTEXT           "前后位置：",IDC_STATIC,14,20,45,9
+    LTEXT           "检测线宽度：",IDC_STATIC,14,95,48,9
+    LTEXT           "Static",IDC_STATIC_LEFT,115,56,21,11
+    LTEXT           "Static",IDC_STATIC_RIGHT,115,81,21,11
+    LTEXT           "Static",IDC_STATIC_HEIGHT,115,32,21,11
+    LTEXT           "选择调整的检测线：",IDC_STATIC,142,11,72,9
+    CONTROL         "Slider1",IDC_SLIDER_LINEHEIGHT,"msctls_trackbar32",TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,105,95,11
+    LTEXT           "Static",IDC_STATIC_WIDTH,115,105,21,11
+END
+
+IDD_FRAMERATE DIALOG 0, 0, 164, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置帧率"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确    定",IDOK,115,11,41,14
+    PUSHBUTTON      "取    消",IDCANCEL,115,30,41,14
+    LTEXT           "设置每帧的刷新时间(毫秒)：",IDC_STATIC,4,11,102,11
+    EDITTEXT        IDC_MILLISECONDNUM,6,27,52,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,2,2,105,46
+END
+
+IDD_SETROADPARAMETER DIALOG 0, 0, 402, 192
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置车道参数"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确　定",IDOK,277,161,47,17
+    PUSHBUTTON      "取　消",IDCANCEL,341,161,47,17
+    GROUPBOX        "车道1",IDC_STATIC,4,4,127,90
+    GROUPBOX        "车道2",IDC_STATIC,137,4,127,90
+    GROUPBOX        "车道3",IDC_STATIC,270,4,127,90
+    GROUPBOX        "车道4",IDC_STATIC,4,98,127,90
+    GROUPBOX        "上检测线",IDC_STATIC,9,13,117,37
+    GROUPBOX        "下检测线",IDC_STATIC,9,53,117,37
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,13,22,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,13,36,82,8
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,13,62,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,13,77,82,8
+    GROUPBOX        "上检测线",IDC_STATIC,275,13,117,37
+    GROUPBOX        "下检测线",IDC_STATIC,275,53,117,37
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,280,22,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,280,36,82,8
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,280,62,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,280,77,82,8
+    GROUPBOX        "上检测线",IDC_STATIC,142,13,117,37
+    GROUPBOX        "下检测线",IDC_STATIC,142,53,117,37
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,147,22,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,147,36,82,8
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,147,62,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,147,77,82,8
+    GROUPBOX        "上检测线",IDC_STATIC,8,106,117,37
+    GROUPBOX        "下检测线",IDC_STATIC,8,147,117,37
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,13,116,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,13,129,82,8
+    LTEXT           "最  大  容  错  帧  数  ：",IDC_STATIC,13,156,82,10
+    LTEXT           "最小判为有车的帧数：",IDC_STATIC,13,169,82,8
+    EDITTEXT        IDC_MAXERRORTOLER12,96,20,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY12,96,35,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER11,96,60,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY11,96,75,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER22,230,20,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY22,230,35,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER21,230,60,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY21,230,75,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER32,364,20,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY32,364,35,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER31,364,60,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY31,364,75,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER42,96,113,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY42,96,127,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXERRORTOLER41,96,155,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MINRELIABILITY41,96,169,24,12,ES_AUTOHSCROLL
+    LTEXT           "单  向   道  的  车  道  数：",IDC_STATIC,144,116,93,10
+    EDITTEXT        IDC_HOWMANYROADWAY,237,114,19,12,ES_AUTOHSCROLL
+    LTEXT           "显示检测信号的车道编号：",IDC_STATIC,144,129,96,10
+    EDITTEXT        IDC_SHOWWHICHSIGNAL,237,128,19,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,142,107,117,37
+    LTEXT           "上检测线信号增强系数：",IDC_STATIC,146,157,88,9
+    LTEXT           "下检测线信号增强系数：",IDC_STATIC,146,171,88,8
+    EDITTEXT        IDC_SINGNAL1,234,170,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SINGNAL2,234,155,22,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,142,147,117,37
+    GROUPBOX        "两检测线间距离(米)",IDC_STATIC,270,98,127,50
+    LTEXT           "车道1：",IDC_STATIC,277,114,28,11
+    LTEXT           "车道3：",IDC_STATIC,277,129,28,11
+    LTEXT           "车道2：",IDC_STATIC,336,114,28,11
+    LTEXT           "车道4：",IDC_STATIC,336,129,28,11
+    EDITTEXT        IDC_SPACE1,305,112,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPACE3,305,128,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPACE2,365,112,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPACE4,365,128,24,12,ES_AUTOHSCROLL
+    GROUPBOX        "车道数目及信号增强系数",IDC_STATIC,137,98,127,90
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "VehicleFlowCounter Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "VehicleFlowCounter"
+            VALUE "LegalCopyright", "版权所有 (C) 2004"
+            VALUE "OriginalFilename", "VehicleFlowCounter.EXE"
+            VALUE "ProductName", "VehicleFlowCounter 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_VIEW_TOTALPARA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 99
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+
+    IDD_CHECKLINE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_FRAMERATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 157
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_SETROADPARAMETER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 395
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CHECKLINE_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb331, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x31df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb331, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x32df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb332, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x31df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb332, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x32df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb333, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x31df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb333, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x32df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb334, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x31df, "\000" 
+    IDC_COMBO_LINENUM, 0x403, 13, 0
+0xb334, 0xb5b5, 0xbcc0, 0xb2ec, 0xcfe2, 0x32df, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "VehicleFlowCounter\n\nVehicl\n\n\nVehicleFlowCounter.Document\nVehicl Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "VehicleFlowCounter"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "连续播放"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+END
+
+STRINGTABLE
+BEGIN
+    ID_DISPLAY              "连续播放\n播放"
+    ID_PAUSE                "暂停视频\n暂停"
+    ID_NEXTFRAME            "下一帧\n下一帧"
+    ID_PREVIOUSFRAME        "上一帧\n上一帧"
+    ID_NEXTTENFRAME         "下10帧\n快进"
+END
+
+STRINGTABLE
+BEGIN
+    ID_PREVIOUSFRAMETEN     "上10帧\n快退"
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\VehicleFlowCounter.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
